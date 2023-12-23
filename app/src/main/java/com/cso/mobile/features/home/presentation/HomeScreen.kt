@@ -46,6 +46,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.cso.mobile.R
 import com.cso.mobile.features.armada.presentation.ArmadaScreen
+import com.cso.mobile.features.report.presentation.ReportScreen
 import com.cso.mobile.ui.theme.KuningGelapColor
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -138,7 +139,11 @@ fun BottomTabLayout(navController: NavHostController) {
                         ArmadaScreen(navController = navController)
                     }
                 }
-                1 -> Text(text = "Report")
+                1 -> {
+                    Box(modifier = Modifier.padding(innerPadding)) {
+                        ReportScreen(navController = navController)
+                    }
+                }
                 2 -> Text(text = "Profile")
             }
         }

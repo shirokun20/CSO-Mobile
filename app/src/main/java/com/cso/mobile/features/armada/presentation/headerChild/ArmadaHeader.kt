@@ -36,7 +36,9 @@ fun ArmadaHeader() {
             // Avater, Name, QR
             ArmadaAvatarQr()
             // Datepicker
-            ArmadaDatePicker()
+            ArmadaDatePicker(
+                value = "Kamis, 07 Sep 2023", modifier = Modifier.padding(top = 24.dp)
+            )
             // Search
             AramadaSearch()
             // Asal dan Tujuan

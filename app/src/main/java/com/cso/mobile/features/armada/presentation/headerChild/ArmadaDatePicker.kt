@@ -24,10 +24,9 @@ import com.cso.mobile.R
 import com.cso.mobile.ui.theme.BgBawahColor
 
 @Composable
-fun ArmadaDatePicker() {
+fun ArmadaDatePicker(value: String, modifier: Modifier) {
     Box(
-        modifier = Modifier
-            .padding(top = 24.dp)
+        modifier = modifier
             .clip(
                 shape = RoundedCornerShape(100.dp),
             )
@@ -52,7 +51,7 @@ fun ArmadaDatePicker() {
                 contentDescription = null,
             )
             Text(
-                text = "Kamis, 07 Sep 2023",
+                text = value,
                 style = TextStyle(
                     fontSize = 12.sp,
                     fontWeight = FontWeight(400),
