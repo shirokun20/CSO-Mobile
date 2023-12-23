@@ -18,4 +18,4 @@ var BgBawahColor = Color(0x4D7B6A0E)
 var KuningGelapColor = Color(0xFFB88A2F)
 var ColkatColor = Color(0xFF604E37)
 
-var FAF2E4Color = Color(    0xFFFAF2E4)
+var FAF2E4Color = Color(0xFFFAF2E4)
