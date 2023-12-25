@@ -2,6 +2,7 @@ package com.cso.mobile.features.tiket.presentation
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -15,7 +16,7 @@ import com.cso.mobile.features.tiket.presentation.headerChild.TiketHeader
 fun TiketScreen(navController: NavHostController) {
     Scaffold { innerPadding ->
         Column(
-            modifier = Modifier.fillMaxSize(),
+            modifier = Modifier.fillMaxSize().padding(innerPadding),
         ) {
             TiketHeader()
             TiketContent()
