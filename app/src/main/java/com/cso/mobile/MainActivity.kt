@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.cso.mobile.components.widget.NavigationComponent
 import com.cso.mobile.features.home.presentation.HomeScreen
 
 class MainActivity : ComponentActivity() {
@@ -20,14 +21,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun NavigationComponent(navController: NavHostController) {
-    NavHost(
-        navController = navController,
-        startDestination = "home"
-    ) {
-        composable("home") {
-            HomeScreen(navController = navController)
-        }
-    }
-}

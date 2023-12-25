@@ -18,10 +18,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.cso.mobile.ui.theme.FAF2E4Color
 
 @Composable
-fun ArmadaContent() {
+fun ArmadaContent(navController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxHeight()
@@ -51,6 +52,7 @@ fun ArmadaContent() {
                     tujuan = "Merak",
                     layanan = "VIP",
                     onClick = {
+                        navController.navigate("tiket")
                     },
                 )
                 repeat(4) {

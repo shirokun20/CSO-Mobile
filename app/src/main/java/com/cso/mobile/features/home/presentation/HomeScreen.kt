@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.cso.mobile.R
 import com.cso.mobile.features.armada.presentation.ArmadaScreen
+import com.cso.mobile.features.profile.presentation.ProfileScreen
 import com.cso.mobile.features.report.presentation.ReportScreen
 import com.cso.mobile.ui.theme.KuningGelapColor
 
@@ -173,7 +174,11 @@ fun BottomTabLayout(navController: NavHostController) {
                     }
                 }
 
-                2 -> Text(text = "Profile")
+                2 -> {
+                    Box(modifier = Modifier.padding(innerPadding)) {
+                        ProfileScreen(navController = navController)
+                    }
+                }
             }
         }
     }

@@ -12,7 +12,7 @@ import com.cso.mobile.features.armada.presentation.headerChild.ArmadaHeader
 fun ArmadaScreen(navController: NavHostController) {
     Column(modifier = Modifier.fillMaxSize()) {
         ArmadaHeader()
-        ArmadaContent()
+        ArmadaContent(navController = navController)
     }
 }
 
