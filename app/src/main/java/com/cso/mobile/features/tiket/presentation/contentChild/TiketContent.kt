@@ -26,13 +26,14 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.cso.mobile.features.report.viewModel.ReportViewModel
+import androidx.navigation.NavHostController
 import com.cso.mobile.ui.theme.FAF2E4Color
 import com.cso.mobile.ui.theme.KuningGelapColor
 
 @Composable
-fun TiketContent(reportViewModel: ReportViewModel = viewModel()) {
+fun TiketContent(
+    navHostController: NavHostController,
+) {
     var selectedTabIndex by remember { mutableStateOf(0) }
     Box(
         modifier = Modifier
@@ -52,7 +53,7 @@ fun TiketContent(reportViewModel: ReportViewModel = viewModel()) {
                 onClick = { value -> selectedTabIndex = value }
             )
             Spacer(modifier = Modifier.height(10.dp))
-            TiketTabContent(selectedTabIndex = selectedTabIndex)
+            TiketTabContent(selectedTabIndex = selectedTabIndex, navHostController)
         }
     }
 }
@@ -113,10 +114,11 @@ fun TiketTabs(
 @Composable
 fun TiketTabContent(
     selectedTabIndex: Int,
+    navController: NavHostController,
 ) {
     when (selectedTabIndex) {
-        0 -> TiketTab1()
-        1 -> {}
+        0 -> TiketTab1(navController)
+        1 -> TiketTab2()
         2 -> {
             Text(
                 text = "Comming Soon", style = TextStyle(

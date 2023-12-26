@@ -3,7 +3,6 @@ package com.cso.mobile.features.tiket.presentation.contentChild
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -26,10 +25,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 
 @Composable
-fun TiketTab1(navController: NavHostController) {
+fun TiketTab2() {
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Text(
             text = "Pick Up",
@@ -55,19 +53,13 @@ fun TiketTab1(navController: NavHostController) {
                         modifier = Modifier
                             .weight(4f)
                             .padding(end = 10.dp),
-                        title = "Tujuan",
+                        title = "Drop Off",
                     )
                     TiketTab1Label(
                         modifier = Modifier
-                            .weight(2f)
-                            .padding(end = 10.dp),
-                        title = "Harga",
-                    )
-                    TiketTab1Label(
-                        modifier = Modifier
-                            .weight(1f),
-                        title = "Kursi",
+                            .weight(2f),
                         alignText = TextAlign.Center,
+                        title = "Jumlah Paket",
                     )
                 }
             },
@@ -80,11 +72,6 @@ fun TiketTab1(navController: NavHostController) {
                                 shape = RoundedCornerShape(size = 6.dp)
                             )
                             .clip(shape = RoundedCornerShape(size = 6.dp))
-                            .clickable(
-                                onClick = {
-                                    navController.navigate("takeChair")
-                                }
-                            )
                             .background(
                                 color = Color.White,
                                 shape = RoundedCornerShape(size = 6.dp)
@@ -101,20 +88,14 @@ fun TiketTab1(navController: NavHostController) {
                                 modifier = Modifier
                                     .weight(4f)
                                     .padding(end = 10.dp),
-                                title = "Merak",
+                                title = "Bima - Merak",
                                 fontSize = 12.sp,
                             )
                             TiketTab1Item(
                                 modifier = Modifier
-                                    .weight(2f)
-                                    .padding(end = 10.dp),
-                                title = "Rp 270.000",
-                            )
-                            TiketTab1Item(
-                                modifier = Modifier
-                                    .weight(1f),
-                                title = "50",
+                                    .weight(2f),
                                 alignText = TextAlign.Center,
+                                title = "50",
                             )
 
                         }
@@ -165,11 +146,6 @@ fun TiketTab1(navController: NavHostController) {
                                 shape = RoundedCornerShape(size = 6.dp)
                             )
                             .clip(shape = RoundedCornerShape(size = 6.dp))
-                            .clickable(
-                                onClick = {
-                                    navController.navigate("takeChair")
-                                }
-                            )
                             .background(
                                 color = Color.White,
                                 shape = RoundedCornerShape(size = 6.dp)
@@ -208,91 +184,5 @@ fun TiketTab1(navController: NavHostController) {
                 }
             }
         )
-        Spacer(modifier = Modifier.height(10.dp))
-        TiketTab1Card(
-            title = "Terminal Lorem",
-            jam = "23:59",
-            isBoxVisible = false,
-            headerWidget = {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 10.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    TiketTab1Label(
-                        modifier = Modifier
-                            .weight(4f)
-                            .padding(end = 10.dp),
-                        title = "Pickup",
-                    )
-                    TiketTab1Label(
-                        modifier = Modifier
-                            .weight(2f)
-                            .padding(end = 10.dp),
-                        title = "Harga",
-                    )
-                    TiketTab1Label(
-                        modifier = Modifier
-                            .weight(1f),
-                        title = "Kursi",
-                        alignText = TextAlign.Center,
-                    )
-                }
-            },
-            contentWidget = {
-                repeat(5) { index ->
-                    Box(
-                        modifier = Modifier
-                            .border(
-                                border = BorderStroke(1.dp, Color(0xFFEBEEF4)),
-                                shape = RoundedCornerShape(size = 6.dp)
-                            )
-                            .clip(shape = RoundedCornerShape(size = 6.dp))
-                            .clickable(
-                                onClick = {
-                                    navController.navigate("takeChair")
-                                }
-                            )
-                            .background(
-                                color = Color.White,
-                                shape = RoundedCornerShape(size = 6.dp)
-                            )
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(10.dp),
-                            verticalAlignment = Alignment.CenterVertically,
-                            horizontalArrangement = Arrangement.SpaceBetween
-                        ) {
-                            TiketTab1Item(
-                                modifier = Modifier
-                                    .weight(4f)
-                                    .padding(end = 10.dp),
-                                title = "Bima - Merak",
-                                fontSize = 12.sp,
-                            )
-                            TiketTab1Item(
-                                modifier = Modifier
-                                    .weight(2f)
-                                    .padding(end = 10.dp),
-                                title = "Rp 270.000",
-                            )
-                            TiketTab1Item(
-                                modifier = Modifier
-                                    .weight(1f),
-                                title = "50",
-                                alignText = TextAlign.Center,
-                            )
-
-                        }
-                    }
-                    if (!(index == 5 - 1)) Spacer(modifier = Modifier.height(10.dp))
-                }
-            }
-        )
-        Spacer(modifier = Modifier.height(10.dp))
     }
 }

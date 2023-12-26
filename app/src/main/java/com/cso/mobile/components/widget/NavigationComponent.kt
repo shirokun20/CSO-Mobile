@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.cso.mobile.features.home.presentation.HomeScreen
+import com.cso.mobile.features.takeChair.presentation.TakeChairScreen
 import com.cso.mobile.features.tiket.presentation.TiketScreen
 
 @Composable
@@ -18,6 +19,9 @@ fun NavigationComponent(navController: NavHostController) {
         }
         composable(route = "tiket") {
             TiketScreen(navController = navController)
+        }
+        composable(route = "takeChair") {
+            TakeChairScreen(navController = navController)
         }
     }
 }

@@ -18,8 +18,8 @@ fun TiketScreen(navController: NavHostController) {
         Column(
             modifier = Modifier.fillMaxSize().padding(innerPadding),
         ) {
-            TiketHeader()
-            TiketContent()
+            TiketHeader(navController)
+            TiketContent(navController)
         }
     }
 }

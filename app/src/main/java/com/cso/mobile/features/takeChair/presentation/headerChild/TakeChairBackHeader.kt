@@ -1,4 +1,4 @@
-package com.cso.mobile.features.tiket.presentation.headerChild
+package com.cso.mobile.features.takeChair.presentation.headerChild
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -22,7 +22,7 @@ import androidx.navigation.NavHostController
 import com.cso.mobile.R
 
 @Composable
-fun TiketBackHeader(navController: NavHostController) {
+fun TakeChairBackHeader(navController: NavHostController) {
     Row(
         modifier = Modifier
             .clip(shape = RoundedCornerShape(size = 10.dp))
