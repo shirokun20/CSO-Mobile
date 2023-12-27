@@ -159,6 +159,7 @@ fun TiketTab1CardItem(
                 ) {
                     TiketTab1Item(
                         modifier = Modifier,
+                        alignText = TextAlign.Center,
                         title = "Sedang mengambil data",
                         fontSize = 12.sp,
                     )
