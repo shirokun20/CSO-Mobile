@@ -57,7 +57,7 @@ fun TiketTab1(navController: NavHostController, vm: TiketViewModel = viewModel()
             }
 
             is TiketState.Success -> {
-                currentState.data.forEach { item ->
+                currentState.data.forEachIndexed { index, item ->
                     val tiketItemViewModel = remember { TiketItemViewModel(title = item.nama) }
                     TiketTab1Card(
                         title = item.nama.lowercase().replaceFirstChar { it.uppercase() },
@@ -74,7 +74,7 @@ fun TiketTab1(navController: NavHostController, vm: TiketViewModel = viewModel()
                                     modifier = Modifier
                                         .weight(4f)
                                         .padding(end = 10.dp),
-                                    title = "Tujuan",
+                                    title = if (index == 0) "Tujuan" else "Pickup",
                                 )
                                 TiketTab1Label(
                                     modifier = Modifier

@@ -11,12 +11,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import com.cso.mobile.ui.theme.BgAtas1Color
 import com.cso.mobile.ui.theme.BgAtas2Color
 
 @Composable
-fun TiketHeader(navController: NavHostController) {
+fun TiketHeader(navController: NavHostController, entry: NavBackStackEntry) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -44,7 +45,7 @@ fun TiketHeader(navController: NavHostController) {
                 onClick = {}
             )
             Spacer(modifier = Modifier.height(10.dp))
-            TiketInfo()
+            TiketInfo(entry)
         }
     }
 }

@@ -20,10 +20,16 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavBackStackEntry
 import com.cso.mobile.ui.theme.BgBawahColor
 
 @Composable
-fun TiketInfo() {
+fun TiketInfo(entry: NavBackStackEntry) {
+    val rute = entry.arguments?.getString("rute") ?: ""
+    val dr = entry.arguments?.getString("dr") ?: ""
+    val layanan = entry.arguments?.getString("layanan") ?: ""
+    val list_outlet_transit = entry.arguments?.getString("list_outlet_transit") ?: ""
+    val jam = entry.arguments?.getString("jam") ?: ""
     Box(
         modifier = Modifier
             .clip(
@@ -44,7 +50,7 @@ fun TiketInfo() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "18:00",
+                text = jam,
                 style = TextStyle(
                     fontSize = 12.sp,
                     fontWeight = FontWeight(700),
@@ -56,7 +62,8 @@ fun TiketInfo() {
                 horizontalAlignment = Alignment.Start,
             ) {
                 Text(
-                    text = "Bima - Merak",
+                    text = rute.lowercase().split(" ")
+                        .joinToString(" ") { it.replaceFirstChar { it.uppercase() } },
                     style = TextStyle(
                         fontSize = 12.sp,
                         fontWeight = FontWeight(700),
@@ -65,7 +72,7 @@ fun TiketInfo() {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "BMA-MRT-SBY-JKT / Executive",
+                    text = "${dr} / ${layanan}",
                     style = TextStyle(
                         fontSize = 10.sp,
                         fontWeight = FontWeight(600),
@@ -74,7 +81,8 @@ fun TiketInfo() {
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = "Bima-Dompu-Sumbawa-Mataram-BaliBanyu",
+                    text = list_outlet_transit.lowercase().split("-")
+                        .joinToString("-") { it.replaceFirstChar { it.uppercase() } },
                     style = TextStyle(
                         fontSize = 10.sp,
                         fontWeight = FontWeight(400),

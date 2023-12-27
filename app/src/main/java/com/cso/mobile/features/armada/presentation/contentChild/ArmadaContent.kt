@@ -67,7 +67,7 @@ fun ArmadaContent(navController: NavHostController, vm: ArmadaViewModel = viewMo
                                 layanan = item.layanan.lowercase()
                                     .replaceFirstChar { it.uppercase() },
                                 onClick = {
-                                    navController.navigate("tiket")
+                                    navController.navigate("tiket/${item.rute}/${item.detail_rute}/${item.layanan}/${item.list_outlet_transit}/${item.jam}")
                                 },
                             )
                         }

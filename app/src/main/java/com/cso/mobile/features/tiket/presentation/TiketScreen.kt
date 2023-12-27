@@ -7,18 +7,19 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import com.cso.mobile.features.tiket.presentation.contentChild.TiketContent
 import com.cso.mobile.features.tiket.presentation.headerChild.TiketHeader
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TiketScreen(navController: NavHostController) {
+fun TiketScreen(navController: NavHostController, entry: NavBackStackEntry) {
     Scaffold { innerPadding ->
         Column(
             modifier = Modifier.fillMaxSize().padding(innerPadding),
         ) {
-            TiketHeader(navController)
+            TiketHeader(navController, entry)
             TiketContent(navController)
         }
     }
